@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88" height="88" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>4DD89EFB-3D1B-4FC7-8E82-82A6EDC98A2B</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-31.2%" y="-25.0%" width="162.5%" height="162.5%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="01_about" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-676.000000, -411.000000)">
+        <g id="Play" filter="url(#filter-1)" transform="translate(688.000000, 418.000000)" fill="#FFFFFF">
+            <circle id="Oval" opacity="0.15" cx="32" cy="32" r="32"></circle>
+            <polygon id="Play-Icon" points="26 20 42 32 26 44"></polygon>
+        </g>
+    </g>
+</svg>

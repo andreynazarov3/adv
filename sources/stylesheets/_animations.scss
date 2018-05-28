@@ -1,0 +1,127 @@
+@import "variables";
+
+.play-button-animate {
+  transition: $transitions;
+  &:hover {
+    filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.4));
+  }
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.to-orange-text-hover {
+  transition: $transitions;
+  &:hover {
+    color: $orange !important;
+  }
+}
+
+.to-red-text-hover {
+  transition: $transitions;
+  &:hover {
+    color: $red;
+  }
+}
+
+.to-orange-border {
+  transition: $transitions;
+  opacity: 0.3;
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    border-color: $orange;
+  }
+}
+
+.to-red-border {
+  transition: $transitions;
+  opacity: 0.3;
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    border-color: $red;
+  }
+}
+
+.wheel {
+  transition: $transitions;
+  animation: rotate-inf infinite 16s linear;
+}
+
+.pulse {
+  transition: $transitions;
+  animation: pulse infinite 2s ease-in-out;
+}
+
+.animate {
+  transition: all 0.7s ease-in-out;
+  will-change: transform, opacity;
+  &--to-up {
+    transform: translateY(100px);
+    &.show {
+      transform: translateY(0);
+    }
+  }
+  &--fade {
+    opacity: 0;
+    &.show {
+      opacity: 1;
+    }
+  }
+}
+
+.transition-bg {
+  background: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1003;
+  transition: $transitions;
+  &--left {
+    transform: translateX(100vw);
+    &.active {
+      transform: translateX(0);
+    }
+  }
+  &--top {
+    transform: translateY(100vh);
+    &.active {
+      transform: translateY(0);
+    }
+  }
+  &--right {
+    transform: translateX(-100vw);
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}
+
+.animated {
+  animation:ripple 0.65s linear;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotate-inf {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

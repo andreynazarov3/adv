@@ -1,0 +1,138 @@
+footer {
+  background: $superlight-grey;
+  position: relative;
+  padding: 70px 0 80px;
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    @media (max-width: 450px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  .share_button, .share_buttons {
+    position: absolute;
+    cursor: pointer;
+    transition: $transitions;
+    transform-origin: center;
+  }
+  .share_button {
+    background: url(../images/share.svg) $white no-repeat 50% 45%;
+    // почему-то пока что бг по центру встает не по центру
+    border: 1px solid $grey;
+    z-index: 2;
+    width: 64px;
+    height: 64px;
+    top: -32px;
+    border-radius: 100%;
+    left: calc(50% - 32px);
+  }
+  .share_button {
+    &:hover, &:active, &.show {
+      transform: rotate(120deg);
+      & + .share_buttons, .share_buttons:hover {
+        a {
+          transform-origin: 0 0;
+          &:nth-child(1) {
+            transform: translateY(-35px) translateX(-64px);
+          }
+          &:nth-child(2) {
+            transform: translateY(-64px);
+          }
+          &:nth-child(3) {
+            transform: translateY(-35px) translateX(64px);
+          }
+        }
+      }
+    }
+  }
+
+  .share_buttons {
+    width: 200px;
+    height: 200px;
+    left: calc(50% - 100px);
+    top: -100px;
+    a {
+      z-index: 1;
+      position: absolute;
+      top: calc(50% - 24px);
+      left: calc(50% - 24px);
+    }
+    &:hover, &:active {
+      a {
+        transform-origin: 0 0;
+        &:nth-child(1) {
+          transform: translateY(-35px) translateX(-64px);
+        }
+        &:nth-child(2) {
+          transform: translateY(-64px);
+        }
+        &:nth-child(3) {
+          transform: translateY(-35px) translateX(64px);
+        }
+      }
+    }
+  }
+
+  input[type='email'] {
+    border-radius: 21px;
+    background-color: $white;
+    border: solid 1px $bq-border-color;
+    padding: 10px 20px;
+    width: 370px;
+    outline: none;
+    transition: $transitions;
+    &:focus {
+      border-color: $orange;
+    }
+    @media (max-width: 450px) {
+      width: 240px;
+    }
+  }
+
+  form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    @media (max-width: 450px) {
+      flex-direction: column;
+    }
+    span {
+      font-size: 24px;
+      opacity: .5;
+      margin-right: 50px;
+      display: inline-block;
+      @media (max-width: 450px) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+    div {
+      .submit {
+        position: absolute;
+        cursor: pointer;
+        top: calc(50% - (17px / 2));
+        right: 20px;
+        background: url(../images/arrow.svg) no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 17px;
+        filter: grayscale(1);
+        transition: $transitions;
+        border: none;
+        outline: none;
+        &:hover {
+          filter: none;
+        }
+        &:active {
+          transform: translateX(5px);
+        }
+        @media (max-width: 450px) {
+          top: 65%;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,178 @@
+.detail {
+  &_top {
+    background: $white;
+    padding-top: 240px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 1024px) {
+      padding: 160px 5% 80px;
+    }
+    @media (max-width: 450px) {
+      padding-bottom: 40px;
+      flex-direction: column;
+    }
+    &__rounded {
+      position: relative;
+      height: 370px;
+      width: 370px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: $white;
+      @media (max-width: 1024px) {
+        width: 240px;
+        height: 240px;
+      }
+      @media (max-width: 450px) {
+        margin-bottom: 20px;
+      }
+      & .round {
+        position: absolute;
+        content: '';
+        background: $orange;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        overflow: hidden;
+      }
+      p {
+        font-size: 36px;
+        line-height: 1.11;
+        color: $white;
+        transform: translateX(30%);
+        z-index: 0;
+        //mix-blend-mode: difference;
+        &.round-bottom {
+          color: $black;
+          @media (max-width: 1024px) {
+            // Не знаю, почему, но именно на айпаде оно смещается на несколько десятков процентов влево
+            transform: translateX(62%);
+          }
+          @media (max-width: 450px) {
+            transform: translateX(-15%);
+          }
+        }
+        @media (max-width: 1024px) {
+          font-size: 32px;
+          flex: 0 0 320px;
+          transform: translateX(50%);
+        }
+        @media (max-width: 450px) {
+          font-size: 24px;
+          transform: translateX(-15%);
+          max-width: 240px;
+        }
+      }
+    }
+    &__image {
+      @media (max-width: 1024px) {
+        width: 360px;
+      }
+      @media (max-width: 450px) {
+        width: 320px;
+      }
+    }
+  }
+  &_block {
+    padding: 80px 0;
+    @media (max-width: 1024px) {
+      padding: 40px 5%;
+    }
+    &--regular {
+      padding-bottom: 160px;
+      @media (max-width: 450px) {
+        padding-bottom: 40px;
+      }
+      p {
+        font-size: 24px;
+        font-weight: 500;
+        @media (max-width: 450px) {
+          font-size: 14px;
+        }
+      }
+    }
+    &--image {
+      display: flex;
+      max-width: 570px;
+      align-items: center;
+      @media (max-width: 450px) {
+        flex-direction: column;
+      }
+      img {
+        margin-right: 30px;
+        @media (max-width: 450px) {
+          max-width: 120px;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &--thin {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & > * {
+        margin-bottom: 40px;
+      }
+      p {
+        max-width: 570px;
+        @media (max-width: 450px) {
+          max-width: 240px;
+        }
+      }
+    }
+  }
+  &_blockquote {
+    padding: 100px calc((100vw - #{$container-width}) / 2);
+    margin: 0 calc((100vw - #{$container-width}) / -2);
+    border-top: 2px solid $bq-border-color;
+    border-bottom: 2px solid $bq-border-color;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    @media (max-width: 1024px) {
+      padding-left: 5%;
+      padding-right: 5%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    @media (max-width: 450px) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    & > * {
+      max-width: 770px;
+    }
+    p {
+      font-size: 24px;
+      font-weight: 500;
+      @media (max-width: 450px) {
+        font-size: 14px;
+      }
+    }
+    &:before {
+      content: url(../images/blockquote_open.svg);
+      position: absolute;
+      left: calc(50% - 55px);
+      top: -22px;
+      padding: 0 40px;
+      background: $white;
+    }
+    &:after {
+      content: url(../images/blockquote_close.svg);
+      position: absolute;
+      left: calc(50% - 55px);
+      bottom: -22px;
+      padding: 0 40px;
+      background: $white;
+    }
+  }
+}

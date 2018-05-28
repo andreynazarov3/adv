@@ -1,0 +1,75 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  display: flex;
+  padding: 120px 0 0;
+  justify-content: space-between;
+  max-width: $container-width;
+  margin: 0 auto;
+  @media (min-width: 1025px) {
+    &.contacts {
+      transform: translateX(100px);
+    }
+  }
+  .header-lang {
+    text-decoration: none;
+    font-weight: 500;
+    transition: $transitions;
+    &:hover {
+      color: $orange;
+    }
+  }
+  &.white {
+    .header-logo--black {
+      display: none;
+    }
+    .header-lang {
+      color: $white;
+    }
+  }
+  &.black {
+    .header-logo--white {
+      display: none;
+    }
+    .header-lang {
+      color: $menu-color;
+    }
+  }
+  @media (max-width: 1024px) {
+    padding: 40px 5% 80px;
+    .header-lang {
+      display: none;
+    }
+  }
+}
+
+.header-back {
+  position: fixed;
+  top: 115px;
+  width: 48px;
+  height: 48px;
+  left: calc((100vw - 970px) / 2 - 100px);
+  transition: $transitions;
+  background: url(../images/back.svg) center no-repeat;
+  border-radius: 100%;
+  background-size: contain;
+  overflow: hidden;
+  &:hover {
+    filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.3));
+  }
+  &:active{
+    filter: brightness(95%);
+  }
+  @media (max-width: 1024px) {
+    left: 48px;
+    top: 650px;
+    z-index: 1001;
+  }
+  @media (max-width: 450px) {
+    left: 20px;
+    top: 87vh;
+  }
+}

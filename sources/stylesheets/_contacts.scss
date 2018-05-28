@@ -1,0 +1,129 @@
+.contacts {
+  &_top {
+    &_block {
+      padding-top: 240px;
+      border-bottom: 1px solid $grey;
+      margin-right: calc((100vw - #{$container-width}) / -2);
+      @media (max-width: 1024px) {
+        margin-right: 0;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    }
+    &__addresse {
+      font-size: 32px;
+      font-weight: 500;
+      max-width: 500px;
+      margin-bottom: 40px;
+      @media (max-width: 450px) {
+        max-width: 100%;
+      }
+    }
+    &__phone {
+      font-size: 32px;
+      font-weight: 500;
+      max-width: 500px;
+      margin-bottom: 40px;
+      @media (max-width: 450px) {
+        max-width: 100%;
+      }
+    }
+    &__email {
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 40px;
+      color: $orange;
+      transition: $transitions;
+      display: inline-block;
+      @media (max-width: 450px) {
+        max-width: 100%;
+      }
+      &:active {
+        color: $orange-clicked;
+      }
+    }
+  }
+  &_bottom {
+    &_block {
+      padding: 40px 0;
+      display: flex;
+      @media (max-width: 1024px) {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      @media (max-width: 450px) {
+        flex-direction: column;
+      }
+    }
+    &__item {
+      flex: 0 0 370px;
+      @media (max-width: 450px) {
+        flex: 0 0 0;
+        margin-bottom: 40px;
+      }
+      &:nth-child(3) {
+        padding-left: 60px;
+      }
+      p {
+        margin-bottom: 40px;
+      }
+      a {
+        color: $orange;
+        transition: $transitions;
+        &:active {
+          color: $orange-clicked;
+        }
+      }
+    }
+    &__man {
+      position: relative;
+      display: inline-block;
+      &--d {
+        @media (max-width: 1024px) {
+          display: none;
+        }
+      }
+      &--m {
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        right: 5%;
+        top: 0;
+        @media (min-width: 1025px) {
+          display: none;
+        }
+      }
+      i {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background: $orange;
+        &:nth-child(1){
+          animation: rounds 3s linear infinite;
+        }
+        &:nth-child(2){
+          animation: rounds 3s linear infinite 1.5s;
+        }
+        &:nth-child(3){
+          animation: rounds 3s linear infinite 3s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rounds {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+

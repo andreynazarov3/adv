@@ -1,0 +1,130 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 200px;
+  @media (max-width: 1024px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  @media (max-width: 450px) {
+    padding-top: 120px;
+  }
+  &_item {
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+    margin-bottom: 30px;
+    background-color: $menu-color;
+    padding: 40px;
+    text-decoration: none;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    position: relative;
+    transition: $transitions;
+    background-size: auto 100%;
+    cursor: pointer;
+    @media (max-width: 450px) {
+      background-color: #0a1e32;
+    }
+    &:after {
+      content: url(../images/arrow-white.svg);
+      position: absolute;
+      left: 40px;
+      bottom: 40px;
+      opacity: 0;
+      transition: $transitions;
+      @media (max-width: 450px) {
+        top: initial;
+        bottom: 25px;
+        left: initial;
+        right: 25px;
+        opacity: 1;
+      }
+    }
+    &:hover {
+      background-size: auto 110%;
+      &:after {
+        opacity: 1;
+      }
+    }
+    &:active {
+      &:after {
+        transform: translateX(10px);
+      }
+    }
+    @media (max-width: 450px) {
+      padding: 20px;
+      flex: 0 0 100% !important;
+    }
+    &:nth-child(1) {
+      background-image: url(../images/news_list_photo.png);
+    }
+    &:nth-child(2) {
+      background-image: url(../images/news_list_photo_2.png);
+    }
+    &:nth-child(5) {
+      background-image: url(../images/news_list_photo_3.png);
+    }
+    h1 {
+      font-size: 144px;
+      color: $white;
+      line-height: 1;
+      @media (max-width: 1024px) {
+        font-size: 96px;
+      }
+    }
+    h2 {
+      font-size: 32px;
+      color: $white;
+      line-height: 1.11;
+      max-width: 350px;
+      margin-bottom: 20px;
+      @media (max-width: 1024px) {
+        font-size: 32px;
+        max-width: 250px;
+      }
+      @media (max-width: 450px) {
+        font-size: 20px;
+        margin-bottom: 0;
+        max-width: 70%;
+      }
+    }
+    p {
+      color: $white;
+      max-width: 240px;
+    }
+    &--normal {
+      justify-content: flex-start;
+      flex: 0 0 calc(50% - 15px);
+      @media (max-width: 450px) {
+        height: 180px;
+        h2 {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &--wide {
+      justify-content: center;
+      flex: 0 0 100%;
+      @media (max-width: 450px) {
+        height: 320px;
+        justify-content: flex-end;
+      }
+    }
+    &--orange {
+      background-color: $orange;
+      @media (max-width: 450px) {
+        justify-content: flex-start;
+      }
+    }
+    &--arrow {
+      &:after {
+        left: auto;
+        top: calc(50% - 18px);
+        right: 40px;
+      }
+    }
+  }
+}

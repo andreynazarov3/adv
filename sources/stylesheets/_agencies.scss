@@ -1,0 +1,104 @@
+.agencies {
+  &__main {
+    max-width: $container-width;
+    margin: 0 auto;
+    &:first-child {
+      padding: 240px 0 0;
+    }
+    @media (max-width: 1024px) {
+      padding: 0 5%;
+      &:first-child {
+        padding: 240px 5% 0;
+      }
+    }
+    @media (max-width: 450px) {
+      padding: 0 5%;
+      &:first-child {
+        padding: 160px 5% 0;
+      }
+    }
+    &.active {
+      border-bottom-color: $orange;
+      .agencies__main__title_sub {
+        transform: translateX(0);
+      }
+      .agencies__main__text {
+        max-height: 200px;
+      }
+      .agencies__main__title_main {
+        color: $orange;
+      }
+      .agencies__main__title {
+        border-bottom-color: $orange;
+        & .arrow {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+    &__title {
+      display: flex;
+      padding-bottom: 10px;
+      border-bottom: 2px solid transparent;
+      max-width: 100%;
+      align-items: baseline;
+      margin-bottom: 30px;
+      position: relative;
+      transition: $transitions;
+      @media (max-width: 1024px) {
+        max-width: 100%;
+        & .arrow {
+          background: url(../images/arrow.svg) no-repeat;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 36px;
+          height: 33px;
+          display: block;
+          transform: translateX(-80vw);
+          transition: all .6s ease-in-out;
+          cursor: pointer;
+          opacity: 0;
+        }
+      }
+      &_main {
+        font-size: 36px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-right: 5px;
+        background: $white;
+        z-index: 1;
+        @media (max-width: 450px) {
+          font-size: 26px;
+        }
+      }
+      &_sub {
+        opacity: .3;
+        font-size: 24px;
+        text-decoration: none;
+        transition: all .6s ease-in-out;
+        transform: translateX(-110%);
+        @media (max-width: 450px) {
+          font-size: 18px;
+        }
+      }
+    }
+    &__text {
+      max-width: 470px;
+      margin-bottom: 40px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all .6s ease-in-out;
+    }
+    &__links {
+      display: flex;
+      flex-direction: column;
+      a {
+        font-size: 36px;
+        text-decoration: none;
+        @extend .to-orange-text-hover;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
